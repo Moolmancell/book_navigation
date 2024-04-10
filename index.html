@@ -4,22 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Navigation</title>
+    <script src="./index.js" defer></script>
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
     <div class="title_name">
         <h1>Odin Book Org</h1>
     </div>
     <div class="book_container">
+        <div class="book">
 
+        </div>
     </div>
-    <button type="button">Add Book</button>
-    <div>
+    <button type="button" id="addBook">Add Book</button>
+    <div class="container-form hidden">
         <form id="add_book_form">
             <label for="book_name">Book:</label>
             <input type="text" id="book_name">
             <br>
+            <label for="book_author">Author:</label>
+            <input type="text" id="book_author">
+            <br>
             <label for="book_pages">Pages:</label>
-            <input type="numbers" id="book_pages">
+            <input type="number" id="book_pages">
             <br>
             <label for="read_status">Already read?:</label>
             <input type="checkbox" id="read_status">
