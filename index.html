@@ -12,26 +12,29 @@
         <h1>Odin Book Org</h1>
     </div>
     <div class="book_container">
-        <div class="book">
-
+        <div class="book">  
+           <p class="title">Dune</p>
+           <p class="author">Frank Hurburt</p>
+           <p class="page">345 pages</p>
+           <p class="readStatus">Read</p>
         </div>
     </div>
     <button type="button" id="addBook">Add Book</button>
     <div class="container-form hidden">
         <form id="add_book_form">
             <label for="book_name">Book:</label>
-            <input type="text" id="book_name">
+            <input type="text" id="book_name" name="book" required>
             <br>
             <label for="book_author">Author:</label>
-            <input type="text" id="book_author">
+            <input type="text" id="book_author" name="author" required>
             <br>
             <label for="book_pages">Pages:</label>
-            <input type="number" id="book_pages">
+            <input type="number" id="book_pages" min="1" name="pages" required>
             <br>
             <label for="read_status">Already read?:</label>
-            <input type="checkbox" id="read_status">
+            <input type="checkbox" id="read_status" name="status" required>
             <br>
-            <button type="button">Submit</button>
+            <button type="submit" id="submitButton">Submit</button>
             <br>
             <button type="button">Cancel</button>
         </form>
