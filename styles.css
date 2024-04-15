@@ -1,0 +1,12 @@
+:root {
+    margin: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.book_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
