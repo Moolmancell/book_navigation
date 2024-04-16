@@ -9,6 +9,8 @@ const book_status = document.getElementById("read_status");
 const submit_button = document.getElementById("submitButton");
 const cancel_button = document.getElementById("cancelButton");
 
+const formInputs = document.querySelectorAll("#add_book_form input")
+
 addBook.addEventListener("click", (e) => {
     newBookForm.classList.toggle("hidden");
 })
@@ -34,9 +36,17 @@ function addBookToLibrary(e) {
   // do stuff here
   const book = new Book(book_title.value, book_author.value, book_pages.value, book_status.checked);
     e.preventDefault();
-    newBookForm.classList.toggle("hidden");
-    emptyField();
-    myLibrary.push(book);
+
+    if (book.title === "" || book.author === "" || book.pages === "") {
+        formInputs.forEach(input => {
+            input.setAttribute("placeholder", "Input the needed info")
+        });
+        return;
+    } else {
+        newBookForm.classList.toggle("hidden");
+        emptyField();
+        myLibrary.push(book);
+    }
 }
 
 function emptyField() {
@@ -44,4 +54,7 @@ function emptyField() {
     book_author.value = "";
     book_pages.value = "";
     book_status.checked = false;
+    formInputs.forEach(input => {
+        input.setAttribute("placeholder", "")
+    });
 }
