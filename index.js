@@ -1,5 +1,6 @@
 const addBook = document.getElementById("addBook");
 const newBookForm = document.querySelector(".container-form")
+const book_container = document.querySelector(".book_container")
 
 //form controls
 const book_title = document.getElementById("book_name");
@@ -46,6 +47,7 @@ function addBookToLibrary(e) {
         newBookForm.classList.toggle("hidden");
         emptyField();
         myLibrary.push(book);
+        generateLists();
     }
 }
 
@@ -56,5 +58,62 @@ function emptyField() {
     book_status.checked = false;
     formInputs.forEach(input => {
         input.setAttribute("placeholder", "")
+    });
+}
+
+function generateLists() {
+
+    book_container.innerHTML = "";
+
+    myLibrary.forEach(book => {
+        const newBook = document.createElement("div")
+        newBook.classList.add("book");
+        book_container.appendChild(newBook);
+
+        const title = document.createElement("p")
+        title.innerText = book.title;
+        title.classList.add("title");
+        newBook.appendChild(title);
+
+        const author = document.createElement("p")
+        author.innerText = book.author;
+        author.classList.add("author");
+        newBook.appendChild(author);
+
+        const pages = document.createElement("p")
+        pages.innerText = book.pages + " pages";
+        pages.classList.add("pages");
+        newBook.appendChild(pages);
+
+        const read = document.createElement("p")
+        read.innerText = "Read";
+        read.classList.add("read_status");
+        newBook.appendChild(read);
+
+        const checkbox = document.createElement("input")
+        checkbox.classList.add("read");
+        checkbox.setAttribute("type", "checkbox")
+        checkbox.addEventListener("click", () => {
+            if (checkbox.checked) {
+                book.status = true;
+            } else {
+                book.status = false;
+            }
+        })
+        if (book.status === true) {
+            checkbox.checked = true
+        } else {
+            checkbox.checked = false
+        }
+        newBook.appendChild(checkbox);
+
+        const remove = document.createElement("button");
+        remove.classList.add("remove_button")
+        remove.innerText = "Remove Book"
+        remove.addEventListener("click", () => {
+            myLibrary.splice(myLibrary.indexOf(book), 1)
+            newBook.remove()
+        })
+        newBook.appendChild(remove)
     });
 }
