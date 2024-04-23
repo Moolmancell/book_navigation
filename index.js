@@ -86,7 +86,7 @@ function generateLists() {
         newBook.appendChild(pages);
 
         const read = document.createElement("p")
-        read.innerText = "Read";
+        read.innerText = "Read:";
         read.classList.add("read_status");
         newBook.appendChild(read);
 
