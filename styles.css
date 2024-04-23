@@ -1,5 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+
 :root {
+    font-family: "Comfortaa", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+body {
     margin: 0;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.title_name {
+    background-color: #803D3B;
+}
+
+.title_name h1 {
+    margin: 0;
+    padding: 20px;
+    color: white;
+    font-weight: 700;
+}
+
+.book_container .book {
+    background-color: #E4C59E;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 9px;
+    border-color: #803D3B;
+    border: 5px #AF8260 solid
+}
+
+.book_container .book p {
+    width: 250px;
+    white-space: nowrap;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+}
+
+.book .title {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.book .read_status {
+    display: inline;
+}
+
+.book button {
+    appearance: none;
+    display: block;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 15px;
+    border: 2px solid #322C2B;
+    background-color: #AF8260; 
+    color: white;
+}
+
+#addBook {
+    appearance: none;
+    display: block;
+    margin: 20px;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 15px;
+    border: 2px solid #322C2B;
+    background-color: #AF8260; 
+    color: white;
+}
+
+.container-form {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#add_book_form {
+    background-color: #E4C59E;
+    padding: 20px;
+    margin: 0;
+    border-radius: 9px;
+    border-color: #803D3B;
+    border: 5px #AF8260 solid;
+    box-shadow: black 1px 1px 2px 0.5px;
+}
+
+#add_book_form button {
+    appearance: none;
+    display: block;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 15px;
+    border: 2px solid #322C2B;
+    background-color: #AF8260; 
+    color: white;
+}
+
+.dim_background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.448);
+    z-index: -1;
 }
 
 .hidden {
@@ -8,5 +122,5 @@
 
 .book_container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
