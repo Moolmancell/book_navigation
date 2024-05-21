@@ -25,12 +25,14 @@ cancel_button.onclick = function() {
 
 const myLibrary = [];
 
-function Book(title, author, pages, status) {
+class Book {
   // the constructor...
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.status = status;
+  constructor(title, author, pages, status) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.status = status;
+  }
 }
 
 function addBookToLibrary(e) {
